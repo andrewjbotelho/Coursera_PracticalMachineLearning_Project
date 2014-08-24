@@ -26,5 +26,24 @@ modFit <- randomForest(classe ~ roll_belt + pitch_belt + yaw_belt + total_accel_
                   gyros_arm_x + gyros_arm_y + gyros_arm_z +
                   gyros_belt_x + gyros_belt_y + gyros_belt_z, data=subTraining)
 
+# View the confusion matrix of how the model did predicting against the subTraining dataset
+confusionMatrix(subTraining$classe, predict(modFit, subTraining))
+
 # View the confusion matrix of how the model did predicting against the subTesting dataset
 confusionMatrix(subTesting$classe, predict(modFit, subTesting))
+
+
+# The following code is for predicting the 20 test cases in the testing dataset
+setwd("~/Coursera/Practical Machine Learning/Project/test_cases")
+
+pml_write_files = function(x){
+  n = length(x)
+  for(i in 1:n){
+    filename = paste0("problem_id_",i,".txt")
+    write.table(x[i],file=filename,quote=FALSE,row.names=FALSE,col.names=FALSE)
+  }
+}
+
+predictions <- predict(modFit, testing)
+pml_write_files(predictions)
+
