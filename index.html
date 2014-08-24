@@ -15,7 +15,7 @@
 			and testing datasets.  This way I could train my model on one part of the training set 
 			and test the model on the other portion of the training set. 
 			I used the createDataPartition() function to split the training dataset into 70/30 portions. 
-			I named these two new training and testing datasets <i>subTraining</i> and <i>subTesting</i>, respectively.
+			I named the new training and testing datasets <i>subTraining</i> and <i>subTesting</i>, respectively.
 		</p>
 		<p>
 			With 160 different variables available in the dataset, the first task was to analyze these 
@@ -52,8 +52,8 @@
 		
 		<p>
 			Regardless of the plots, I decided to use every variable that did not have blank or NA fields for my first model. 
-			Since I saw that some of the plots seemed to have clusters of the different classes, I thought 
-			that a decision tree may be useful in making splits that can classify a rows into the different clusters. 
+			Since I noticed that some of the plots seemed to have clusters around the different classes, I thought 
+			that a decision tree may be useful in making splits that can classify rows into the different clusters. 
 			Therefore I decided to use a Random Forest for my first model. I trained this model against the 
 			<i>subTraining</i> dataset (See R code).
 		</p>
@@ -76,8 +76,8 @@
 		
 		<p>
 			I trained a few more Random Forest models using fewer variables from the subTraining dataset, but this always resulted in 
-			a lower accuracy when predicting against subTesting dataset.  Therefore, I decided to stick with the first Random Forest model I made 
-			that uses all variables from the dataset that do not contain NA or blank values.  When running this Random Forest model against the 
+			a lower accuracy when predicting against the subTesting dataset.  Therefore, I decided to stick with the first Random Forest model I made 
+			that uses all variables from the subTraining dataset that do not contain NA or blank values.  When running this Random Forest model against the 
 			20 test cases in the testing dataset, I was 20/20.
 		</p>
 		
