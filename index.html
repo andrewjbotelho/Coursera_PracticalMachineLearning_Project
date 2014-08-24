@@ -54,13 +54,24 @@
 		</p>
 		
 		<p>
-			To test the effectiveness of this model, I ran a prediction using my Random Forest model against the <i>subTesting</i> dataset. 
+			To test the effectiveness of this model, I first ran a prediction using my Random Forest model against 
+			the <i>subTraining</i> dataset (the same dataset I trained the model on).  For this prediction, I accurately 
+			predicted the classe 100% of the time:
+		</p>
+		
+		<figure>
+			<img src="confusion_matrix1.JPG" alt="Confusion Matrix 1">
+			<figcaption>Confusion Matrix for the predicted vs. actual on the subTraining dataset. The matrix reveals a 100% accuracy.</figcaption>
+		</figure>
+			
+		<p>
+			Next, I ran a prediction using my Random Forest model against the <i>subTesting</i> dataset in order to calculate an <b>out-of-sample error rate</b>. 
 			Here is the confusion matrix of the predicted vs. actual for the subTesting dataset:
 		</p>
 		
 		<figure>
-			<img src="confusion_matrix.JPG" alt="Confusion Matrix">
-			<figcaption>Confusion Matrix for the predicted vs. actual. The matrix reveals a 98% accuracy.</figcaption>
+			<img src="confusion_matrix2.JPG" alt="Confusion Matrix 2">
+			<figcaption>Confusion Matrix for the predicted vs. actual on the subTesting dataset. The matrix reveals a 98% accuracy.</figcaption>
 		</figure>
 		
 		<p>
